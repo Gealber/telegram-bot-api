@@ -2482,11 +2482,11 @@ type WebAppInfo struct {
 	URL string `json:"url"`
 }
 
-func (config *SetChatMenuButtonConfig) method() string {
+func (config SetChatMenuButtonConfig) method() string {
 	return "setChatMenuButton"
 }
 
-func (config *SetChatMenuButtonConfig) params() (Params, error) {
+func (config SetChatMenuButtonConfig) params() (Params, error) {
 	params := make(Params)
 
 	params.AddNonZero64("chat_id", config.ChatID)
