@@ -2466,3 +2466,34 @@ func prepareInputMediaForFiles(inputMedia []interface{}) []RequestFile {
 
 	return files
 }
+
+type SetChatMenuButtonConfig struct {
+	ChatID     int64       `json:"chat_id"`
+	MenuButton interface{} `json:"menu_button"`
+}
+
+type MenuButtonWebApp struct {
+	Type   string     `json:"type"`
+	Text   string     `json:"text"`
+	WebApp WebAppInfo `json:"web_app"`
+}
+
+type WebAppInfo struct {
+	URL string `json:"url"`
+}
+
+func (config *SetChatMenuButtonConfig) method() string {
+	return "setChatMenuButton"
+}
+
+func (config *SetChatMenuButtonConfig) params() (Params, error) {
+	params := make(Params)
+
+	params.AddNonZero64("chat_id", config.ChatID)
+	err := params.AddInterface("menu_button", config.MenuButton)
+	if err != nil {
+		return nil, err
+	}
+
+	return params, nil
+}
