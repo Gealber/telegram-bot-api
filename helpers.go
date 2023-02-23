@@ -926,7 +926,7 @@ func NewDeleteMyCommandsWithScopeAndLanguage(scope BotCommandScope, languageCode
 	return DeleteMyCommandsConfig{Scope: &scope, LanguageCode: languageCode}
 }
 
-// NewSetChatMenuButton allows you to set menu button.
+// NewSetChatMenuButton allows you to set menu button. Only web app menu is supported at the moment.
 func NewSetChatMenuButton(chatID int64, menuButton interface{}) SetChatMenuButtonConfig {
 	return SetChatMenuButtonConfig{
 		ChatID:     chatID,
