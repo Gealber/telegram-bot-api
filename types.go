@@ -621,6 +621,10 @@ type Message struct {
 	//
 	// optional
 	ReplyMarkup *InlineKeyboardMarkup `json:"reply_markup,omitempty"`
+	// SetChatMenuButton is a service message: the chate menu button was set;
+	//
+	// optional
+	SetChatMenuButton bool `json:"set_chat_menu_button,omitempty"`
 }
 
 // Time converts the message timestamp into a Time.

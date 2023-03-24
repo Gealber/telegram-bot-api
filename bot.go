@@ -344,6 +344,10 @@ func (bot *BotAPI) Send(c Chattable) (Message, error) {
 		return Message{}, err
 	}
 
+	if string(resp.Result) == "true" && c.method() == "setChatMenuButton" {
+		return Message{SetChatMenuButton: true}, nil
+	}
+
 	var message Message
 	err = json.Unmarshal(resp.Result, &message)
 
