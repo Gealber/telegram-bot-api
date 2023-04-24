@@ -40,6 +40,13 @@ func NewBotAPI(token string) (*BotAPI, error) {
 	return NewBotAPIWithClient(token, APIEndpoint, &http.Client{})
 }
 
+// NewTestBotAPI creates a new BotAPI instance.
+//
+// It requires a token, provided by @BotFather on Telegram test environment.
+func NewTestBotAPI(token string) (*BotAPI, error) {
+	return NewBotAPIWithClient(token, TestAPIEndpoint, &http.Client{})
+}
+
 // NewBotAPIWithAPIEndpoint creates a new BotAPI instance
 // and allows you to pass API endpoint.
 //

@@ -14,6 +14,9 @@ const (
 	// APIEndpoint is the endpoint for all API methods,
 	// with formatting for Sprintf.
 	APIEndpoint = "https://api.telegram.org/bot%s/%s"
+	// TestAPIEndpoint is the endpoint for all API methods,
+	// but in the test environment.
+	TestAPIEndpoint = "https://api.telegram.org/bot%s/test/%s"
 	// FileEndpoint is the endpoint for downloading a file from Telegram.
 	FileEndpoint = "https://api.telegram.org/file/bot%s/%s"
 )
